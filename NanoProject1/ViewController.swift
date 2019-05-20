@@ -171,6 +171,9 @@ class ViewController: UIViewController {
         randomNum1 = Int.random(in: 1...3)
         randomNum2 = Int.random(in: 1...3)
         randomNum3 = Int.random(in: 1...6)
+        UIView.animate(withDuration: 3) {
+            self.randomButton()
+        }
     }
     
     override func viewDidLoad() {
