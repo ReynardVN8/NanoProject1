@@ -23,7 +23,36 @@ class ViewController: UIViewController {
     
     var randomNum1 = Int.random(in: 1...3)
     var randomNum2 = Int.random(in: 1...3)
+    var randomNum3 = Int.random(in: 1...6)
     var isCombined = false
+    
+    func randomButton(){
+        if (randomNum3 == 1){
+            self.combineButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        } else if (randomNum3 == 2){
+            self.combineButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        } else if (randomNum3 == 3){
+            self.splitButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        } else if (randomNum3 == 4){
+            self.splitButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        } else if (randomNum3 == 5){
+            self.resetButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        } else if (randomNum3 == 6){
+            self.resetButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 139, y: 232)
+        }
+    }
     
     @IBAction func startSegment1(_ sender: Any) {
         UIView.animate(withDuration: 5) {
@@ -37,9 +66,7 @@ class ViewController: UIViewController {
                 self.animateViewYellow.transform = CGAffineTransform(translationX: 137, y: 74)
                 self.animateViewYellow.backgroundColor = .yellow
                 UIView.animate(withDuration: 3, delay: 8, options: UIView.AnimationOptions.init(), animations: {
-                    self.combineButton.transform = CGAffineTransform(translationX: -135, y: 232)
-                    self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-                    self.resetButton.transform = CGAffineTransform(translationX: 139, y: 232)
+                    self.randomButton()
                 }, completion: nil)
             }, completion: nil)
             
@@ -143,6 +170,7 @@ class ViewController: UIViewController {
         }
         randomNum1 = Int.random(in: 1...3)
         randomNum2 = Int.random(in: 1...3)
+        randomNum3 = Int.random(in: 1...6)
     }
     
     override func viewDidLoad() {
