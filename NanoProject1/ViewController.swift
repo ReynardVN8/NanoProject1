@@ -65,8 +65,13 @@ class ViewController: UIViewController {
                 self.animateViewBlue.backgroundColor = .blue
                 self.animateViewYellow.transform = CGAffineTransform(translationX: 137, y: 74)
                 self.animateViewYellow.backgroundColor = .yellow
-                UIView.animate(withDuration: 3, delay: 8, options: UIView.AnimationOptions.init(), animations: {
-                    self.randomButton()
+                UIView.animate(withDuration: 2, delay: 8, options: UIView.AnimationOptions.init(), animations: {
+                    self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                    self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                    self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                    UIView.animate(withDuration: 2, delay: 10, options: UIView.AnimationOptions.init(), animations: {
+                        self.randomButton()
+                    }, completion: nil)
                 }, completion: nil)
             }, completion: nil)
             
@@ -171,9 +176,7 @@ class ViewController: UIViewController {
         randomNum1 = Int.random(in: 1...3)
         randomNum2 = Int.random(in: 1...3)
         randomNum3 = Int.random(in: 1...6)
-        UIView.animate(withDuration: 3) {
-            self.randomButton()
-        }
+        self.randomButton()
     }
     
     override func viewDidLoad() {
