@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var combineButton: UIButton!
     @IBOutlet weak var splitButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet var mainView: UIView!
     
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     var randomNum2 = Int.random(in: 1...3)
     var randomNum3 = Int.random(in: 1...6)
     var isCombined = false
+    var begin = true
     
     func randomButton(){
         if (randomNum3 == 1){
@@ -55,26 +57,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startSegment1(_ sender: Any) {
-        UIView.animate(withDuration: 5) {
-            self.coverView.transform = CGAffineTransform(translationX: 0, y: -550)
-            UIView.animate(withDuration: 3, delay: 5, options: .init(), animations: {
-                self.mainView.backgroundColor = .black
-                self.animateViewRed.transform = CGAffineTransform(translationX: 0, y: -222)
-                self.animateViewRed.backgroundColor = .red
-                self.animateViewBlue.transform = CGAffineTransform(translationX: -137, y: 74)
-                self.animateViewBlue.backgroundColor = .blue
-                self.animateViewYellow.transform = CGAffineTransform(translationX: 137, y: 74)
-                self.animateViewYellow.backgroundColor = .yellow
-                UIView.animate(withDuration: 2, delay: 8, options: .init(), animations: {
-                    self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
-                    self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-                    self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
-                    UIView.animate(withDuration: 2, delay: 10, options: .init(), animations: {
-                        self.randomButton()
+        if begin {
+            UIView.animate(withDuration: 5) {
+                self.coverView.transform = CGAffineTransform(translationX: 0, y: -550)
+                UIView.animate(withDuration: 3, delay: 5, options: .init(), animations: {
+                    self.mainView.backgroundColor = .black
+                    self.titleLabel.textColor = .black
+                    self.animateViewRed.transform = CGAffineTransform(translationX: 0, y: -222)
+                    self.animateViewRed.backgroundColor = .red
+                    self.animateViewBlue.transform = CGAffineTransform(translationX: -137, y: 74)
+                    self.animateViewBlue.backgroundColor = .blue
+                    self.animateViewYellow.transform = CGAffineTransform(translationX: 137, y: 74)
+                    self.animateViewYellow.backgroundColor = .yellow
+                    UIView.animate(withDuration: 2, delay: 8, options: .init(), animations: {
+                        self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                        self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                        self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+                        UIView.animate(withDuration: 2, delay: 10, options: .init(), animations: {
+                            self.randomButton()
+                            self.startButton.backgroundColor = .black
+                        }, completion: nil)
                     }, completion: nil)
                 }, completion: nil)
-            }, completion: nil)
-            
+            }
+            begin = false
         }
     }
     
@@ -146,7 +152,12 @@ class ViewController: UIViewController {
         }, completion: nil)
         
         UIView.animate(withDuration: 5, delay: 16, options: .init(), animations: {
-                self.mainView.backgroundColor = .white
+            self.mainView.backgroundColor = .white
+            self.titleLabel.textColor = .white
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 3, delay: 22, options: .init(), animations: {
+            self.titleLabel.textColor = .black
         }, completion: nil)
     }
     
@@ -193,7 +204,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func splitColour(_ sender: Any) {
-        spliting()
+        // easter egg if the result colour is orange and split button pressed
+        if ((randomNum1 == 1 && randomNum2 == 3) || (randomNum1 == 3 && randomNum2 == 1)){
+            easterEgg()
+        } else {
+            spliting()
+        }
         isCombined = false
     }
     
@@ -211,7 +227,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 
 
