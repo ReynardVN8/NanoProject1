@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     @IBAction func startSegment1(_ sender: Any) {
         UIView.animate(withDuration: 5) {
             self.coverView.transform = CGAffineTransform(translationX: 0, y: -550)
-            UIView.animate(withDuration: 3, delay: 5, options: UIView.AnimationOptions.init(), animations: {
+            UIView.animate(withDuration: 3, delay: 5, options: .init(), animations: {
                 self.mainView.backgroundColor = .black
                 self.animateViewRed.transform = CGAffineTransform(translationX: 0, y: -222)
                 self.animateViewRed.backgroundColor = .red
@@ -65,11 +65,11 @@ class ViewController: UIViewController {
                 self.animateViewBlue.backgroundColor = .blue
                 self.animateViewYellow.transform = CGAffineTransform(translationX: 137, y: 74)
                 self.animateViewYellow.backgroundColor = .yellow
-                UIView.animate(withDuration: 2, delay: 8, options: UIView.AnimationOptions.init(), animations: {
+                UIView.animate(withDuration: 2, delay: 8, options: .init(), animations: {
                     self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
                     self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
                     self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
-                    UIView.animate(withDuration: 2, delay: 10, options: UIView.AnimationOptions.init(), animations: {
+                    UIView.animate(withDuration: 2, delay: 10, options: .init(), animations: {
                         self.randomButton()
                     }, completion: nil)
                 }, completion: nil)
@@ -119,6 +119,35 @@ class ViewController: UIViewController {
                 self.animateViewYellow.backgroundColor = .green
             }
         }
+    }
+    
+    func easterEgg(){
+        UIView.animate(withDuration: 3) {
+            self.animateViewRed.transform = CGAffineTransform(translationX: 0, y: -45)
+            self.animateViewBlue.transform = CGAffineTransform(translationX: 0, y: -45)
+            self.animateViewYellow.transform = CGAffineTransform(translationX: 0, y: -45)
+        }
+        UIView.animate(withDuration: 3, delay: 4, options: .init(), animations: {
+            self.animateViewRed.transform = CGAffineTransform(translationX: 0, y: -500)
+            self.animateViewBlue.transform = CGAffineTransform(translationX: 0, y: -500)
+            self.animateViewYellow.transform = CGAffineTransform(translationX: 0, y: -500)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 3, delay: 8, options: .init(), animations: {
+            self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 3, delay: 12, options: .init(), animations: {
+            self.combineButton.transform = CGAffineTransform(translationX: 0, y: -500)
+            self.splitButton.transform = CGAffineTransform(translationX: 0, y: -500)
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: -500)
+        }, completion: nil)
+        
+        UIView.animate(withDuration: 5, delay: 16, options: .init(), animations: {
+                self.mainView.backgroundColor = .white
+        }, completion: nil)
     }
     
     func spliting(){
