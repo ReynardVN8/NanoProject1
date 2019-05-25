@@ -142,7 +142,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 3, delay: 8, options: .init(), animations: {
             self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
             self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)18012504
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
         }, completion: nil)
         
         UIView.animate(withDuration: 3, delay: 12, options: .init(), animations: {
