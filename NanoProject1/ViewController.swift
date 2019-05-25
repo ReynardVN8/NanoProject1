@@ -142,13 +142,14 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 3, delay: 8, options: .init(), animations: {
             self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
             self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)18012504
         }, completion: nil)
         
         UIView.animate(withDuration: 3, delay: 12, options: .init(), animations: {
             self.combineButton.transform = CGAffineTransform(translationX: 0, y: -500)
             self.splitButton.transform = CGAffineTransform(translationX: 0, y: -500)
             self.resetButton.transform = CGAffineTransform(translationX: 0, y: -500)
+            self.titleLabel.isHidden = false
         }, completion: nil)
         
         UIView.animate(withDuration: 5, delay: 16, options: .init(), animations: {
@@ -227,6 +228,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        titleLabel.isHidden = true
     }
 
 
