@@ -30,29 +30,29 @@ class ViewController: UIViewController {
     
     func randomButton(){
         if (randomNum3 == 1){
-            self.combineButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.resetButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 120, y: 232)
         } else if (randomNum3 == 2){
-            self.combineButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.splitButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 120, y: 232)
         } else if (randomNum3 == 3){
-            self.splitButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.resetButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: 120, y: 232)
         } else if (randomNum3 == 4){
-            self.splitButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.resetButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.combineButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 120, y: 232)
         } else if (randomNum3 == 5){
-            self.resetButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.combineButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.splitButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.splitButton.transform = CGAffineTransform(translationX: 120, y: 232)
         } else if (randomNum3 == 6){
-            self.resetButton.transform = CGAffineTransform(translationX: -135, y: 232)
+            self.resetButton.transform = CGAffineTransform(translationX: -120, y: 232)
             self.splitButton.transform = CGAffineTransform(translationX: 0, y: 232)
-            self.combineButton.transform = CGAffineTransform(translationX: 139, y: 232)
+            self.combineButton.transform = CGAffineTransform(translationX: 120, y: 232)
         }
     }
     
